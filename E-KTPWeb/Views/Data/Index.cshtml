@@ -1,0 +1,91 @@
+﻿@model PaginationModel<DataKTP>
+
+
+<div class="d-flex justify-content-between align-items-center">
+    <h3>
+        <small class="text-body-primary">Data Kartu Tanda Penduduk</small>
+    </h3>   
+</div>
+
+<form method="get">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" name="search" placeholder="Cari berdasarkan NIK atau Nama" value="@ViewBag.CurrentFilter">
+                <button type="submit" class="btn btn-outline-secondary">Cari</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="d-flex align-items-start input-group">
+                <label for="category" class="input-group-text">Kategori</label>
+                <select class="form-select" id="category" name="category">
+                    <option value="nik">NIK</option>
+                    <option value="name">Nama</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a asp-action="Create" asp-controller="Data" class="btn btn-primary ml-auto">Tambah Data</a>
+        </div>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.SearchError))
+{
+    <div class="alert alert-warning" role="alert">
+        @ViewBag.SearchError
+    </div>
+}
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>            
+            <th scope="col">NIK</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model.Data.OrderBy(u => u.NIK))
+        {
+            <tr>
+                <td scope="col">@obj.NIK</td>
+                <td scope="col">@obj.Name</td>
+                <td scope="col">
+                    <div>
+                        <a asp-action="Edit" asp-controller="Data" asp-route-id="@obj.Id" class="btn btn-primary">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a asp-action="Hapus" asp-controller="Data" asp-route-id="@obj.Id" class="btn btn-danger">
+                            <i class="fas fa-trash-alt"></i> Hapus
+                        </a>
+                        <a asp-action="Detail" asp-controller="Data" asp-route-id="@obj.Id" class="btn btn-warning">
+                            <i class="fas fa-info-circle"></i> Detail
+                        </a>
+                    </div>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="?page=@(Model.CurrentPage - 1)">Previous</a>
+        </li>
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a class="page-link" href="?page=@i">@i</a>
+            </li>
+        }
+        <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="?page=@(Model.CurrentPage + 1)">Next</a>
+        </li>
+    </ul>
+</nav>
+
+

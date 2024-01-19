@@ -1,0 +1,26 @@
+﻿@model DataKTP
+
+<form method="post">
+    <div class="container">
+        <div class="mb-4">
+            <h2>Update Data KTP</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Id">ID ANDA</label>
+            <input asp-for="Id" class="form-control" disabled style="background-color: transparent; border: none;" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NIK" class="form-label"></label>
+            <input asp-for="NIK" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-action="Index" asp-controller="Data" class="btn btn-secondary">Kembali</a>
+        </div>
+    </div>
+</form>

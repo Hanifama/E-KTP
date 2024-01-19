@@ -1,0 +1,34 @@
+﻿@model DataKTP
+
+<form method="post">
+    <div class="container">
+        <div class="mb-4">
+            <h2>Detail Data KTP</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <div class="col-md-2">
+                <label asp-for="NIK" class="form-label">NIK ANDA :</label>
+            </div>
+            <div class="col-md-4">
+                <input asp-for="NIK" class="form-control" disabled style="background-color: rgba(255, 255, 255, 0); border: none;" />
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <div class="col-md-2">
+                <label asp-for="Name" class="form-label">NAMA ANDA :</label>
+            </div>
+            <div class="col-md-4">
+                <input asp-for="Name" class="form-control" disabled style="background-color: rgba(255, 255, 255, 0); border: none;" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-md-6">
+                <a asp-action="Index" asp-controller="Data" class="btn btn-secondary">Kembali</a>
+            </div>
+        </div>
+    </div>
+</form>
