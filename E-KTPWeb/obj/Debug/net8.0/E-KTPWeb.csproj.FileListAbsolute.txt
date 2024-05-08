@@ -556,3 +556,4 @@ D:\Rytech\E-KTP\E-KTPWeb\bin\Debug\net8.0\refs\WindowsBase.dll
 D:\Rytech\E-KTP\E-KTPWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\Rytech\E-KTP\E-KTPWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 D:\Rytech\E-KTP\E-KTPWeb\obj\Debug\net8.0\E-KTPWeb.MvcApplicationPartsAssemblyInfo.cs
+D:\Rytech\E-KTP\E-KTPWeb\obj\Debug\net8.0\E-KTPWeb.sourcelink.json

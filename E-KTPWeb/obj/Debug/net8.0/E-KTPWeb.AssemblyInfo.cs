@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("E-KTPWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09d7038a5fbaa13f5d0be995058699791e623592")]
 [assembly: System.Reflection.AssemblyProductAttribute("E-KTPWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E-KTPWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
